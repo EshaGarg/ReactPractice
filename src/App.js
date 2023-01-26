@@ -1,25 +1,68 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
+// class Welcome extends React.Component {
+//   render() {
+//     return <h1>Hello, {this.props.name}</h1>;
+//   }
+// }
+
+function Welcome(props) {
+  return <h1>{props.name}</h1>
+}
+
+function Comment(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Comment">
+      <UserInfo user={props.author}></UserInfo>
+      <div className="Comment-text">
+        {props.text}
+      </div>
+      <div className="Comment-date">
+        {props.date}
+      </div>
     </div>
   );
 }
+
+function Avatar(props) {
+  return (
+    <img className="Avatar"
+          src={props.user.avatarUrl}
+          alt={props.user.name}
+        />
+  )
+}
+
+function UserInfo(props) {
+  return (
+    <div className="UserInfo">
+      <Avatar user={props.user}></Avatar>
+      <div className="UserInfo-name">
+        {props.user.name}
+      </div>
+    </div>
+  )
+}
+
+// function App() {
+//   const user = {
+//     firstName: "Esha",
+//     lastName: "Garg"
+//   };
+
+//   function formatUser() {
+//     return user.firstName + " " + user.lastName;
+//   }
+function App() {
+  return (
+    <div>
+      <Welcome name='Sara'/>
+      <Welcome name='Sana'/>
+      <Welcome name='Sasha'/>
+    </div>
+  );
+}
+
 
 export default App;
