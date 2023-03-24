@@ -7,6 +7,8 @@ import { Toggle } from './Toggle';
 import { Greeting } from './Greeting';
 import { LoginControl } from './LoginControl';
 import { NumbersList } from './NumbersList';
+import { FilterableProductTable } from './Components/FilterableProductTable/FilterableProductTable';
+import { ThemeContextPractice } from './ThemeContextPractice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -72,8 +74,9 @@ root.render(
     <App />
     <Toggle />
     <Greeting isLoggedIn={true} /> */}
-    <LoginControl />
-    <NumbersList numbers={numbers} />
+    {/* <FilterableProductTable /> */}
+    {/* <MyComponent /> */}
+    <ThemeContextPractice />
     </div>
   </React.StrictMode>
 );
